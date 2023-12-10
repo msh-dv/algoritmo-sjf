@@ -1,2 +1,2 @@
-# algoritmo-sjf
+# Algoritmo-SJF
 Simulador de un algoritmo SJF
