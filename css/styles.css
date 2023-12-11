@@ -1,0 +1,13 @@
+:root {
+  --bg-color:#111;
+  --fg-color:#eee;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+}
+
+h1 {
+  color:var(--fg-color);
+}
