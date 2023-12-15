@@ -16,6 +16,7 @@ class App {
     this.procesos = [];
   }
 
+
   agregarProceso() {
     const nombre = document.getElementById('nombre').value;
     const tiempoEjecucion = parseInt(document.getElementById('tiempo').value);
@@ -33,6 +34,11 @@ class App {
     } else {
       alert('Por favor, ingresa un nombre válido y un tiempo de ejecución positivo.');
     }
+  }
+
+  limpiarCola(){
+    this.procesos = [];
+    this.actualizarListaProcesos();
   }
 
   actualizarListaProcesos() {
@@ -53,9 +59,11 @@ class App {
 	return a.tiempoEjecucion - b.tiempoEjecucion;
       })
     }
+
     
     //Imprimir la lista de procesos ejecutados
     const ejecucionFinal = document.getElementById("lista-final");
+    ejecucionFinal.innerHTML='';
     this.procesos.forEach(proceso => {
       const ejecucion = document.createElement('li');
       ejecucion.textContent=proceso.mensaje();
@@ -76,3 +84,6 @@ function ejecutarSJF() {
   app.ejecutarSJF();
 }
 
+function limpiar(){
+  app.limpiarCola()
+}
