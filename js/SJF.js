@@ -24,13 +24,13 @@ class App {
     this.procesosOrdenados=[];
   }
 
-  agregarProcRand(){
+  agregarProcRand(){ //Genera 15 procesos aleatorios con tiempos de ejecucion/llegada de entre 1 a 20
     let nombres = ["Chrome", "LibreOffice", "Photoshop", "Firefox", "Wine",
                    "Spotify", "Vim", "Inkscape", "GIMP", "htop", "node.js",
                    "vbox", "elinks", "bash", "fdisk"];
 
-    for(let i=0; i<15;i++){
-      const nuevoProceso = new Proceso(this.procesos.length +1, nombres[i], Math.floor(Math.random()*20 +1), Math.floor(Math.random()*20 +1));
+    for(let i=0; i<150;i++){
+      const nuevoProceso = new Proceso(this.procesos.length +1, nombres[Math.floor(Math.random()*14 +1)], Math.floor(Math.random()*20 +1), Math.floor(Math.random()*20 +1));
       this.procesos.push(nuevoProceso);
       this.procesosOrdenados.push(nuevoProceso);
     }
@@ -97,7 +97,7 @@ class App {
       })
     }
 
-    for(let j=0;j<this.procesosOrdenados.length;j++){
+    for(let j=0;j<this.procesosOrdenados.length;j++){ // Los procesos "pasan" a la CPU
       this.procesosOrdenados[j].estado = "Finalizado";
     }
 
@@ -106,7 +106,7 @@ class App {
     graficos();
 
   }
-  actualizarProcesosOrdenados(){
+  actualizarProcesosOrdenados(){ //actualiza la lista de procesos ordenados
     //Limpiar la lista de procesos ordenados
     const ejecucionFinal = document.getElementById("lista-final");
     ejecucionFinal.innerHTML='';
@@ -119,22 +119,22 @@ class App {
     });
   }
 
-graficos(){
+graficos(){ //Funcion para generar graficas de chart.js
   const ctx = document.getElementById("myChart");
   const xValues =this.procesos.map(proceso => proceso.nombre);
   const yValues = this.procesos.map(proceso => proceso.tiempoEjecucion);
 
-  const barColors = ["#00FF00", "#00CC00", "#60FF06", "#33a933", "#22FF22",
+  const barColors = ["#00FF00", "#00CC00", "#60FF06", "#33a933", "#22FF22", //Colores para las graficas
                      "#33eC33", "#00f900", "#4CfF50", "#2EaD32", "#8Bf34A",
-                     "#00FF00", "#00CC00", "#66FF66", "#339933", "#99FF99",
-                     "#33CC33", "#009900", "#4CAF50", "#2E7D32", "#8BC34A"];
+                     "#00FF00", "#00CC00", "#66FF66", "#039903", "#4aFF49",
+                     "#33CC33", "#00ff00", "#4Cfa50", "#2EfD32", "#8Bf34A"];
 
     new Chart(ctx, {
       type: "bar",
       data: {
 	labels: xValues,
 	datasets: [{
-	  backgroundColor: barColors,
+	  backgroundColor: barColors, //Caracteristicas de la grafica de barras
 	  data: yValues
 	}]
       },
