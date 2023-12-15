@@ -66,7 +66,9 @@ class App {
 
   limpiarCola(){
     this.procesos = [];
+    this.procesosOrdenados = [];
     this.actualizarListaProcesos();
+    this.actualizarProcesosOrdenados();
   }
 
   //Metodo que actualiza la lista en la interfaz
