@@ -76,11 +76,42 @@ class App {
       ejecucion.textContent=proceso.mensaje();
       ejecucionFinal.appendChild(ejecucion);
     });
+    graficos();
+
   }
+graficos(){
+  const ctx = document.getElementById("myChart");
+  const xValues =this.procesos.map(proceso => proceso.nombre);
+  const yValues = this.procesos.map(proceso => proceso.tiempoEjecucion);
+  const barColors = ["red", "green","blue","orange","brown"];
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: xValues,
+      datasets: [{
+	backgroundColor: barColors,
+	data: yValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      title: {
+	display: true,
+	text: "Procesos"
+      }
+    }
+  });
 }
+}
+
+
+
+
 
 // Instanciar la aplicación
 const app = new App();
+
 
 // Funciones globales para interactuar con la aplicación
 function agregarProceso() {
@@ -93,4 +124,9 @@ function ejecutarSJF() {
 
 function limpiar(){
   app.limpiarCola()
+}
+
+
+function graficos(){
+  app.graficos()
 }

@@ -2,6 +2,7 @@
   --bg-color:#010;
   --fg-color:#0e0;
   --sfg-color:#0c0;
+  --hvbg-color:#030;
 }
 /*Estilo para la scroll-bar*/
 ::-webkit-scrollbar {
@@ -48,7 +49,7 @@ main {
 
 
 .container {
-  margin-top: 20px;
+  margin-top: 5%;
   width: 90vw;
   padding:0.5rem 1rem;
   height: 600px;
@@ -70,11 +71,6 @@ main {
   margin:0 10px;
 }
 
-.graph {
-  margin: 10px auto;
-  width: 99%;
-  height: 55%;
-}
 
 ul {
   padding:0;
@@ -105,21 +101,53 @@ fieldset {
   border-radius: 0;
   border:2px solid var(--fg-color);
 }
+input:hover {
+  color: var(--fg-color);
+  background-color: var(--hvbg-color);
+}
 
 input {
-  margin-bottom: 10px;
-  color: var(--fg-color);
+  margin:10px 0;
+  color: var(--sfg-colorfg);
   background-color: var(--bg-color);
   border:1px solid var(--fg-color);
+
+}
+#tiempo {
+  margin-left: 10px;
+}
+button:hover {
+  background-color: var(--hvbg-color);
+}
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 button {
   color: var(--fg-color);
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
   background-color: var(--bg-color);
   border: 1px solid var(--fg-color);
+  padding:0.5rem;
 }
 
 label {
   display: block;
   font-weight: bold;
+  padding-left: 1rem;
 }
+
+.graph {
+  margin: 10px auto;
+  width: 99%;
+  height: 55%;
+}
+#myChart {
+  max-width: 100%;
+}
+
+
