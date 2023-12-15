@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="es-MX">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
-  <title>Proyecto Final</title>
-</head>
-<body>
-  <div class="container">
-    <div class="box">
-      <fieldset>
-	<legend>Procesos</legend>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Proyecto Final</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-container">
+	<div class="container">
+	  <div class="top">
+	  <div class="box">
 
-	<label for="ps_nombre">Proceso:
-	  <input type="text" id="nombre" name="nombre" placeholder="Nombre del proceso">
-	</label>
+	    <fieldset>
+	      <legend>Procesos</legend>
 
-	<label for="tiempo">Tiempo:
-	  <input type="number" id="tiempo" name="tiempo" placeholder="Tiempo de ejecución">
-	</label>
+	      <label for="ps_nombre">Proceso:
+		<input type="text" id="nombre" name="nombre" placeholder="Nombre del proceso">
+	      </label>
 
-	<button onclick="agregarProceso()">Ingresar proceso</button>
-	<button onclick="ejecutarSJF()">Iniciar</button>
-	<button onclick="limpiar()">Limpiar</button>
-      </fieldset>
-      <script src="js/SJF.js"></script>
-    </div>
+	      <label for="tiempo">Tiempo:
+		<input type="number" id="tiempo" name="tiempo" placeholder="Tiempo de ejecución">
+	      </label>
 
-    <div class="box">
-      <fieldset>
-	<legend>Cola de procesos</legend>
-      <ul id="listaProcesos">
-      </ul>
-      </fieldset>
-    </div>
+	      <button onclick="agregarProceso()">Ingresar proceso</button>
+	      <button onclick="ejecutarSJF()">Iniciar</button>
+	      <button onclick="limpiar()">Limpiar</button>
+	    </fieldset>
+	    
+	    <script src="js/SJF.js"></script>
+	  </div>
 
-    <div class="box">
-      <fieldset>
-	<legend>Ejecucion</legend>
-      <ul id="lista-final">
-      </ul>
-      </fieldset>
-    </div>
-  </div>
-</body>
+	  <div class="box">
+	    <fieldset>
+	      <legend>Cola de procesos</legend>
+	      <ul id="listaProcesos">
+	      </ul>
+	    </fieldset>
+	  </div>
+
+	  <div class="box">
+	    <fieldset>
+	      <legend>Ejecución</legend>
+	      <ul id="lista-final">
+	      </ul>
+	    </fieldset>
+	  </div>
+	  </div>
+
+	<div class="graph">
+	  <fieldset>
+	    <legend>Graph</legend>
+	  </fieldset>
+	</div>
+	</div>
+      </div>
+    </main>
+  </body>
 </html>
