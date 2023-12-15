@@ -12,8 +12,7 @@ class Proceso {
     return `Proceso ${this.id} | Nombre: ${this.nombre} | Llegada: ${this.tiempoLlegada} | CPU:${this.tiempoEjecucion} | Estado:${this.estado}`;
   }
   mensajeOrdenado(){
-    return `Proceso ${this.id} | Nombre:${this.nombre} | CPU:${this.tiempoEjecucion} | Estado:${this.estado}`;
-  }
+    return `Proceso ${this.id} | Nombre:${this.nombre} | CPU:${this.tiempoEjecucion} | Estado:${this.estado}`; }
 }
 
 // Clase que representa la aplicación
@@ -141,6 +140,16 @@ graficos(){ //Funcion para generar graficas de chart.js
 	}]
       },
       options: {
+	plugins:{
+	  legend:{
+	    labels:{
+	      font:{
+		size:16,
+		family: "Arial",
+	      },
+	    },
+	  },
+	},
 	layout: {padding:0},
 	legend: {display: false},
 	title: {
