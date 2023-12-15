@@ -1,3 +1,4 @@
+//Declaramos nuestra clase para crear procesos
 class Proceso {
   constructor(id, nombre, tiempoEjecucion) {
     this.id = id;
@@ -13,19 +14,22 @@ class Proceso {
 // Clase que representa la aplicación
 class App {
   constructor() {
+    //Declaramos nuestra cola de procesos
     this.procesos = [];
   }
 
 
   agregarProceso() {
+    //Declaramos los valores del nombre del proceso y el tiempo
     const nombre = document.getElementById('nombre').value;
     const tiempoEjecucion = parseInt(document.getElementById('tiempo').value);
 
+    //Revisar si los datos son correctos, si son numeros y si es mayor a cero
     if (nombre && !isNaN(tiempoEjecucion) && tiempoEjecucion > 0) {
       const nuevoProceso = new Proceso(this.procesos.length + 1, nombre, tiempoEjecucion);
       this.procesos.push(nuevoProceso);
 
-      // Limpiar los campos después de agregar un proceso
+      // Limpiamos los campos después de agregar un proceso
       document.getElementById('nombre').value = '';
       document.getElementById('tiempo').value = '';
 
@@ -36,36 +40,39 @@ class App {
     }
   }
 
+  //Metodo que limpia el array de procesos
+
   limpiarCola(){
     this.procesos = [];
     this.actualizarListaProcesos();
   }
-
+  //Metodo que actualiza la lista en la interfaz
   actualizarListaProcesos() {
     const listaProcesosElement = document.getElementById('listaProcesos');
     listaProcesosElement.innerHTML = ''; // Limpiar la lista
 
     this.procesos.forEach(proceso => {
-      const li = document.createElement('li');
+      const li = document.createElement('li'); //Creamos elementos hijos para el elemento de lista
       li.textContent = proceso.mensaje();
       listaProcesosElement.appendChild(li);
     });
   }
 
   ejecutarSJF() {
-    //Algoritmo de ordenamiento, de menor a mayor
+    //Algoritmo de ordenamiento, de menor a mayor 
     for(let i=0;i<this.procesos.length;i++){
       this.procesos.sort(function(a,b){
-	return a.tiempoEjecucion - b.tiempoEjecucion;
+	return a.tiempoEjecucion - b.tiempoEjecucion; //Si son iguales, se ejecuta el primero en llegar
       })
     }
 
-    
-    //Imprimir la lista de procesos ejecutados
+    //Limpiar la lista de procesos ordenados
     const ejecucionFinal = document.getElementById("lista-final");
     ejecucionFinal.innerHTML='';
+
+    //Imprimir la lista de procesos ejecutados
     this.procesos.forEach(proceso => {
-      const ejecucion = document.createElement('li');
+      const ejecucion = document.createElement('li'); //Imprimimos nuestros procesos ordenados por su tiempo de ejecución
       ejecucion.textContent=proceso.mensaje();
       ejecucionFinal.appendChild(ejecucion);
     });
