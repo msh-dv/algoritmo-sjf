@@ -10,6 +10,7 @@
     </script>
   </head>
   <body>
+    <h1>Algoritmo SJF - no expropiativo</h1>
     <main>
       <div class="main-container">
 	<div class="container">
@@ -23,7 +24,11 @@
 		  <input type="text" id="nombre" name="nombre" placeholder="Nombre del proceso">
 		</label>
 
-		<label for="tiempo">Tiempo:
+		<label for="llegada">Llegada:
+		  <input type="number" id="llegada" name="llegada" placeholder="Tiempo de llegada">
+		</label>
+
+		<label for="tiempo">CPU:
 		  <input type="number" id="tiempo" name="tiempo" placeholder="Tiempo de ejecución">
 		</label>
 		<div class="buttons">
@@ -43,7 +48,6 @@
 		</ul>
 	      </fieldset>
 	    </div>
-
 	    <div class="box">
 	      <fieldset>
 		<legend>Ejecución</legend>
@@ -52,16 +56,14 @@
 	      </fieldset>
 	    </div>
 	  </div>
-
 	  <div class="graph">
 	    <fieldset>
-	      <legend>Graph</legend>
+	      <legend>Orden de Ejecución</legend>
 	      <div class="graph">
 		<canvas id="myChart">
 		</canvas> 
 	      </div>
 	    </fieldset>
-	    <script src="js/grafica.js"></script>
 
 	  </div>
 	</div>
