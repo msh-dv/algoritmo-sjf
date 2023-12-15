@@ -8,25 +8,38 @@
 </head>
 <body>
   <div class="container">
-    <div class="box-1">
+    <div class="box">
       <fieldset>
 	<legend>Procesos</legend>
+
 	<label for="ps_nombre">Proceso:
 	  <input type="text" id="nombre" name="nombre" placeholder="Nombre del proceso">
 	</label>
+
 	<label for="tiempo">Tiempo:
 	  <input type="text" id="tiempo" name="tiempo" placeholder="Tiempo de ejecución">
 	</label>
+
 	<button onclick="agregarProceso()">Ingresar proceso</button>
+	<button onclick="ejecutarSJF()">Iniciar</button>
       </fieldset>
       <script src="js/SJF.js"></script>
     </div>
-    <div class="box-2">
+
+    <div class="box">
+      <fieldset>
+	<legend>Cola de procesos</legend>
       <ul id="listaProcesos">
       </ul>
+      </fieldset>
     </div>
-    <div class="box-3">
 
+    <div class="box">
+      <fieldset>
+	<legend>Ejecucion</legend>
+      <ul id="lista-final">
+      </ul>
+      </fieldset>
     </div>
   </div>
 </body>

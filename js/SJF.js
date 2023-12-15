@@ -48,13 +48,17 @@ class App {
 
   ejecutarSJF() {
     // Implementar la lógica para ordenar y ejecutar los procesos según el algoritmo SJF
-    for(let proceso in this.procesos){
-      console.log(`${proceso}`);
+    for(let i=0;i<this.procesos.length;i++){
+      this.procesos.sort(function(a,b){
+	return a.tiempoEjecucion - b.tiempoEjecucion;
+      })
     }
     // En este ejemplo, simplemente imprimimos la lista actual de procesos
-    console.log("Orden de ejecución SJF:");
+    const ejecucionFinal = document.getElementById("lista-final");
     this.procesos.forEach(proceso => {
-      console.log(proceso.mensaje());
+      const ejecucion = document.createElement('li');
+      ejecucion.textContent=proceso.mensaje();
+      ejecucionFinal.appendChild(ejecucion);
     });
   }
 }
