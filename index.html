@@ -9,18 +9,21 @@
 <body>
   <div class="container">
     <div class="box-1">
-      <form action="procesos.js">
       <fieldset>
 	<legend>Procesos</legend>
 	<label for="ps_nombre">Proceso:
-	  <input type="text" id="ps_nombre" name="nombre" placeholder="Nombre del proceso">
+	  <input type="text" id="nombre" name="nombre" placeholder="Nombre del proceso">
 	</label>
-	<button type="submit">Ingresar proceso</button>
+	<label for="tiempo">Tiempo:
+	  <input type="text" id="tiempo" name="tiempo" placeholder="Tiempo de ejecución">
+	</label>
+	<button onclick="agregarProceso()">Ingresar proceso</button>
       </fieldset>
-      </form>
+      <script src="js/SJF.js"></script>
     </div>
     <div class="box-2">
-
+      <ul id="listaProcesos">
+      </ul>
     </div>
     <div class="box-3">
 
