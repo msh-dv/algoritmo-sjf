@@ -24,6 +24,19 @@ class App {
     this.procesosOrdenados=[];
   }
 
+  agregarProcRand(){
+    let nombres = ["Chrome", "LibreOffice", "Photoshop", "Firefox", "Wine",
+                   "Spotify", "Vim", "Inkscape", "GIMP", "htop", "node.js",
+                   "vbox", "elinks", "bash", "fdisk"];
+
+    for(let i=0; i<15;i++){
+      const nuevoProceso = new Proceso(this.procesos.length +1, nombres[i], Math.floor(Math.random()*20 +1), Math.floor(Math.random()*20 +1));
+      this.procesos.push(nuevoProceso);
+      this.procesosOrdenados.push(nuevoProceso);
+    }
+    this.actualizarListaProcesos();
+  }
+
 
   agregarProceso() {
     //Declaramos los valores del nombre del proceso y el tiempo
@@ -110,7 +123,11 @@ graficos(){
   const ctx = document.getElementById("myChart");
   const xValues =this.procesos.map(proceso => proceso.nombre);
   const yValues = this.procesos.map(proceso => proceso.tiempoEjecucion);
-  const barColors = ["#1f1", "#2f2","#0f0","#3f3","#0fff0f"];
+
+  const barColors = ["#00FF00", "#00CC00", "#60FF06", "#33a933", "#22FF22",
+                     "#33eC33", "#00f900", "#4CfF50", "#2EaD32", "#8Bf34A",
+                     "#00FF00", "#00CC00", "#66FF66", "#339933", "#99FF99",
+                     "#33CC33", "#009900", "#4CAF50", "#2E7D32", "#8BC34A"];
 
     new Chart(ctx, {
       type: "bar",
@@ -155,7 +172,10 @@ function limpiar(){
   app.limpiarCola()
 }
 
-
 function graficos(){
   app.graficos()
+}
+
+function procesosRandom(){
+  app.agregarProcRand();
 }
