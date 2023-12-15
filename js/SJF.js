@@ -29,7 +29,7 @@ class App {
                    "Spotify", "Vim", "Inkscape", "GIMP", "htop", "node.js",
                    "vbox", "elinks", "bash", "fdisk"];
 
-    for(let i=0; i<150;i++){
+    for(let i=0; i<15;i++){
       const nuevoProceso = new Proceso(this.procesos.length +1, nombres[Math.floor(Math.random()*14 +1)], Math.floor(Math.random()*20 +1), Math.floor(Math.random()*20 +1));
       this.procesos.push(nuevoProceso);
       this.procesosOrdenados.push(nuevoProceso);
