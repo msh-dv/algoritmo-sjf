@@ -1,11 +1,28 @@
 :root {
-  --bg-color:#000;
+  --bg-color:#010;
   --fg-color:#0e0;
+  --sfg-color:#0c0;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sfg-color);
+}
+
 
 *{
   box-sizing: border-box;
 }
+
+
 
 body {
   font-family: monospace;
