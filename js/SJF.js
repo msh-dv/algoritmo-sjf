@@ -47,13 +47,14 @@ class App {
   }
 
   ejecutarSJF() {
-    // Implementar la lógica para ordenar y ejecutar los procesos según el algoritmo SJF
+    //Algoritmo de ordenamiento, de menor a mayor
     for(let i=0;i<this.procesos.length;i++){
       this.procesos.sort(function(a,b){
 	return a.tiempoEjecucion - b.tiempoEjecucion;
       })
     }
-    // En este ejemplo, simplemente imprimimos la lista actual de procesos
+    
+    //Imprimir la lista de procesos ejecutados
     const ejecucionFinal = document.getElementById("lista-final");
     this.procesos.forEach(proceso => {
       const ejecucion = document.createElement('li');
@@ -62,6 +63,7 @@ class App {
     });
   }
 }
+
 // Instanciar la aplicación
 const app = new App();
 
