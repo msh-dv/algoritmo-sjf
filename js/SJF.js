@@ -26,7 +26,7 @@ class App {
   agregarProcRand(){ //Genera 15 procesos aleatorios con tiempos de ejecucion/llegada de entre 1 a 20
     let nombres = ["Chrome", "LibreOffice", "Photoshop", "Firefox", "Wine",
                    "Spotify", "Vim", "Inkscape", "GIMP", "htop", "node.js",
-                   "vbox", "elinks", "bash", "fdisk"];
+                   "vbox", "elinks", "bash", "fdisk", "btop", "tor", "nmcli"];
 
     for(let i=0; i<15;i++){
       const nuevoProceso = new Proceso(this.procesos.length +1, nombres[Math.floor(Math.random()*14 +1)], Math.floor(Math.random()*20 +1), Math.floor(Math.random()*20 +1));
