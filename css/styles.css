@@ -4,7 +4,9 @@
   --sfg-color:#0c0;
   --hvbg-color:#030;
 }
-/*Estilo para la scroll-bar*/ ::-webkit-scrollbar {
+
+/*Estilo para la scroll-bar*/ 
+::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
@@ -59,7 +61,6 @@ main {
   background-color: var(--bg-color);
   border-radius: 3px;
   border:2px solid var(--fg-color);
-  /*box-shadow: 3px 3px 10px 0px black;*/
 }
 .top {
   width: 100%;
