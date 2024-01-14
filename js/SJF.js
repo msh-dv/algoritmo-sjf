@@ -128,7 +128,9 @@ graficos(){ //Funcion para generar graficas de chart.js
   const barColors = ["#00FF00", "#00CC00", "#60FF06", "#33a933", "#22FF22", //Colores para las graficas
                      "#33eC33", "#00f900", "#4CfF50", "#2EaD32", "#8Bf34A",
                      "#00FF00", "#00CC00", "#66FF66", "#039903", "#4aFF49",
-                     "#33CC33", "#00ff00", "#4Cfa50", "#2EfD32", "#8Bf34A"];
+                     "#33CC33", "#00ff00", "#4Cfa50", "#2EfD32", "#8Bf34A",
+                     "#00FF00", "#00CC00", "#60FF06", "#33a933", "#22FF22"];
+
 
     new Chart(ctx, {
       type: "bar",
